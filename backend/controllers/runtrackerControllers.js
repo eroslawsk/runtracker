@@ -4,7 +4,7 @@ import { runSchema } from "../models/runModel";
 const Run = mongoose.model("Run", runSchema);
 
 export const addNewRun = (request, response) => {
-  let newRun = new Run(req.body);
+  let newRun = new Run(request.body);
 
   newRun.save((err, Run) => {
     if (err) {
@@ -24,7 +24,7 @@ export const getRun = (request, response) => {
 };
 
 export const getRunWithID = (request, response) => {
-  Run.findById(req.params.RunID, (err, Run) => {
+  Run.findById(request.params.RunID, (err, Run) => {
     if (err) {
       response.send(err);
     }
@@ -34,8 +34,8 @@ export const getRunWithID = (request, response) => {
 
 export const UpdateRun = (request, response) => {
   Run.findOneAndUpdate(
-    { _id: req.params.RunID },
-    req.body,
+    { _id: request.params.RunID },
+    request.body,
     { new: true },
     (err, Run) => {
       if (err) {
@@ -47,7 +47,7 @@ export const UpdateRun = (request, response) => {
 };
 
 export const deleteRun = (request, response) => {
-  Run.remove({ _id: req.params.RunID }, (err, Run) => {
+  Run.remove({ _id: request.params.RunID }, (err, Run) => {
     if (err) {
       response.send(err);
     }

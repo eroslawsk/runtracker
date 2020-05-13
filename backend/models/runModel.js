@@ -4,18 +4,22 @@ const Schema = mongoose.Schema;
 
 export const runSchema = new Schema({
   day: {
-    type: Date,
+    type: String,
     required: true,
   },
   distance: {
     type: Number,
     required: true,
   },
-  time: {
+  hours: {
     type: Number,
     required: true,
   },
-  averageMile: {
+  minutes: {
+    type: Number,
+    required: true,
+  },
+  seconds: {
     type: Number,
     required: true,
   },

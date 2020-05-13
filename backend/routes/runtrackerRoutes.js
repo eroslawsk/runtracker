@@ -1,4 +1,10 @@
-import { addNewRun, getRun } from "../controllers/runtrackerControllers";
+import {
+  addNewRun,
+  getRun,
+  getRunWithID,
+  UpdateRun,
+  deleteRun,
+} from "../controllers/runtrackerControllers";
 
 const routes = (app) => {
   app
@@ -16,3 +22,5 @@ const routes = (app) => {
 
     .delete(deleteRun);
 };
+
+export default routes;
