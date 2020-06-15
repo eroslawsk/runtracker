@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import TotalMileage from "./TotalMileage";
 import MonthlyMileage from "./MonthlyMileage";
+import MonthlyGoal from "./MonthlyGoal";
+import CreateRunForm from "./CreateRunForm";
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -27,12 +29,19 @@ class Dashboard extends React.Component {
   }
   render() {
     return (
-      <div className="row">
-        <div className="col-sm">
-          <TotalMileage data={this.state.data} />
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-lg">
+            <TotalMileage data={this.state.data} />
+          </div>
+          <div className="col-lg">
+            <MonthlyMileage data={this.state.data} />
+          </div>
         </div>
-        <div className="col-sm">
-          <MonthlyMileage data={this.state.data} />
+        <div className="row">
+          <div className="col-lg-12">
+            <MonthlyGoal data={this.state.data} />
+          </div>
         </div>
       </div>
     );

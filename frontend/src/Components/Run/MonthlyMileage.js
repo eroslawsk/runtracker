@@ -40,9 +40,9 @@ class MonthlyMileage extends React.Component {
       <div>
         <h1>Monthly Mileage</h1>
         <div className="form-group">
-          <label for="monthSelect">Select Month:</label>
+          <label htmlFor="monthSelect">Select Month:</label>
           <select
-            class="form-control"
+            className="form-control"
             id="monthSelect"
             value={this.state.month}
             onChange={this.handleChangeMonth}
@@ -62,9 +62,9 @@ class MonthlyMileage extends React.Component {
           </select>
         </div>
         <div className="form-group">
-          <label for="yearSelect">Select Month:</label>
+          <label htmlFor="yearSelect">Select Month:</label>
           <select
-            class="form-control"
+            className="form-control"
             id="yearSelect"
             value={this.state.year}
             onChange={this.handleChangeYear}
