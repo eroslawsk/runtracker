@@ -4,7 +4,9 @@
   "description": "Keep track of daily and monthly mileage app",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js --exec babel-node -e js"
+    "start": "nodemon ./index.js --exec babel-node -e js",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "Erik Oslawski",
   "license": "ISC",
@@ -15,9 +17,11 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.9.12"
+    "mongoose": "^5.13.15",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
-  }
+  },
+  "snyk": true
 }
